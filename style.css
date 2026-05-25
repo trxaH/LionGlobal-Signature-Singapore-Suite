@@ -634,13 +634,18 @@ footer a {
 .image-btn.one-two a:nth-child(1) {
     order: 1;
     /* transform: translateY(-50vh); */
-    transform: translateY(clamp(-120px, -15vh, -40px));
+    /* transform: translateY(clamp(-120px, -15vh, -40px)); */
 
 }
 
 .image-btn.one-two a:nth-child(2),
 .image-btn.one-two a:nth-child(3) {
     order: 2;
+}
+
+.image-btn.one-two {
+    justify-content: space-between;
+    height: 70vh;
 }
 
 /* 2 : 1 layout */
@@ -652,8 +657,13 @@ footer a {
 .image-btn.two-one a:nth-child(3) {
     order: 2;
     /* margin-top: 53vh; */
-    margin-top: clamp(120px, 18vh, 300px);
+    /* margin-top: clamp(120px, 18vh, 300px); */
 
+}
+
+.image-btn.two-one {
+    justify-content: space-between;
+    height: 65vh;
 }
 
 /* 2 buttons */
@@ -1212,7 +1222,8 @@ a.fundCentre-button:visited {
 @media (max-width: 430px) {
 
     .image-btn {
-        right: 3%;
+        height: 60vh;
+        right: 2%;
         bottom: 2%;
         gap: 8px;
         transform: scale(0.88);
