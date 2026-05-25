@@ -648,6 +648,11 @@ footer a {
     height: 70vh;
 }
 
+/* separation between groups */
+.image-btn.one-two a:nth-child(1) {
+    margin-bottom: clamp(20px, 8vh, 60px);
+}
+
 /* 2 : 1 layout */
 .image-btn.two-one a:nth-child(1),
 .image-btn.two-one a:nth-child(2) {
@@ -661,20 +666,33 @@ footer a {
 
 }
 
+/* separation before button 3 */
+.image-btn.two-one a:nth-child(3) {
+    margin-top: clamp(40px, 10vh, 120px);
+}
+
 .image-btn.two-one {
     justify-content: space-between;
     height: 65vh;
 }
 
 /* 2 buttons */
-.image-btn.two-buttons {
-    /* gap: 30vh; */
-    gap: clamp(20px, 10vh, 30vh);
+.image-btn.two-buttons a:nth-child(1) {
+    order: 1;
 }
 
-.image-btn.two-buttons a:first-child {
-    /* transform: translateY(-25vh); */
-    transform: translateY(clamp(-80px, -10vh, -25vh));
+.image-btn.two-buttons a:nth-child(2) {
+    order: 2;
+}
+
+/* small controlled stagger */
+.image-btn.two-buttons {
+    gap: clamp(6px, 2vh, 14px);
+}
+
+/* optional slight offset difference */
+.image-btn.two-buttons a:last-child {
+    margin-top: clamp(6px, 2vh, 20px);
 }
 
 .image-btn a{
@@ -1222,9 +1240,9 @@ a.fundCentre-button:visited {
 @media (max-width: 430px) {
 
     .image-btn {
-        height: 60vh;
-        right: 5%;
-        bottom: 2%;
+        height: 58vh;
+        right: 15%;
+        bottom: 3%;
         gap: 8px;
         transform: scale(0.88);
         transform-origin: bottom right;
@@ -1240,7 +1258,7 @@ a.fundCentre-button:visited {
     /* ONE-TWO layout fix */
     .image-btn.one-two a:nth-child(1) {
         /* transform: translateY(clamp(-40px, -5vh, -15px)); */
-        margin-bottom: 16px;
+        margin-bottom: 40px;
     }
 
     .image-btn.one-two a:nth-child(2) {
@@ -1249,7 +1267,7 @@ a.fundCentre-button:visited {
 
     /* TWO-ONE layout fix */
     .image-btn.two-one a:nth-child(3) {
-        margin-top: clamp(60px, 9vh, 120px);
+        margin-top: 60px;
     }
 
     /* TWO-BUTTONS ONLY (phone fix) */
@@ -1263,7 +1281,8 @@ a.fundCentre-button:visited {
     }
 
     .image-btn.two-buttons a:last-child {
-        transform: translateY(clamp(18px, 5vh, 60px));
+        /* transform: translateY(clamp(18px, 5vh, 60px)); */
+        margin-top: 10px;
     }
 
 }
