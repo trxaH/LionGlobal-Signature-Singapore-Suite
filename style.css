@@ -1239,7 +1239,12 @@ a.fundCentre-button:visited {
 
     /* ONE-TWO layout fix */
     .image-btn.one-two a:nth-child(1) {
-        transform: translateY(clamp(-40px, -5vh, -15px));
+        /* transform: translateY(clamp(-40px, -5vh, -15px)); */
+        margin-bottom: 16px;
+    }
+
+    .image-btn.one-two a:nth-child(2) {
+        margin-bottom: 6px;
     }
 
     /* TWO-ONE layout fix */
@@ -1249,7 +1254,8 @@ a.fundCentre-button:visited {
 
     /* TWO BUTTON layout */
     .image-btn.two-buttons {
-        gap: clamp(10px, 8vh, 18vh);
+        gap: 6px;
+        transform: translateY(-2vh);
     }
 
     .image-btn.two-buttons a:first-child {
