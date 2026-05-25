@@ -1,0 +1,395 @@
+class Quiz {
+  constructor() {
+    this.audio = null;
+    this.QUIZ = [
+      {
+        image: `quiz-Q1.jpg`,
+        question: `You step into a restaurant after enduring a storm. How are you feeling?`,
+        answers: {
+          LeastRisk: `I'm a little shaken`,
+          LowRisk: `I'm okay - Ready to head in`,
+          ModerateRisk: `Great! - looking forward to the meal`,
+        },
+      },
+      {
+        image: `quiz-Q2.jpg`,
+        question: `Your reservation has been confirmed, but your table is not ready, and the restaurant looks crowded tonight. What's your reaction?`,
+        answers: {
+          LowRisk: `Ask how long the wait will be`,
+          ModerateRisk: `Ask if there are any other alternate seats that are available at the moment`,
+          LeastRisk: `Feel reassured that your spot has been confirmed and wait patiently`,
+        },
+      },
+      {
+        image: `quiz-Q3.jpg`,
+        question: `The waiter comes over as you take a seat. He asks if you are craving anything and you respond with...`,
+        answers: {
+          LowRisk: `"What do most people order?"`,
+          LeastRisk: `"Let me look at the menu and I'll decide"`,
+          ModerateRisk: `"What is your personal favourite?"`,
+        },
+      },
+      {
+        image: `quiz-Q4.jpg`,
+        question: `Before leaving, he asks about how you like the pacing of your meals being served, and you answer with...`,
+        answers: {
+          ModerateRisk: `"Serve immediately when ready!"`,
+          LeastRisk: `"I'll let you know when I am done with each dish"`,
+          LowRisk: `"However you guys normally do it"`,
+        },
+      },
+      {
+        image: `quiz-Q5.jpg`,
+        question: `The appetizer has arrived but wait! You notice an unexpected ingredient. What's your reaction?`,
+        answers: {
+          LeastRisk: `Ask if the dish could be served without it`,
+          LowRisk: `Ask the waiter about the taste before deciding`,
+          ModerateRisk: `Take a sniff and a small bite to test if you like it`,
+        },
+      },
+      {
+        image: `quiz-Q6.jpg`,
+        question: `You're digging into the main dish but you don't like the taste. What do you do?`,
+        answers: {
+          LowRisk: `Ask for garnish`,
+          LeastRisk: `Stop eating`,
+          ModerateRisk: `Let the waiter know and give your feedback`,
+        },
+      },
+      {
+        image: `quiz-Q7.jpg`,
+        question: `You've just finished your main meal, and your stomach starts to feel full...but you have one more dish to go. What would you do?`,
+        answers: {
+          LowRisk: `I'll pass`,
+          LeastRisk: `Ask for a takeaway container`,
+          ModerateRisk: `Bring forth the dessert!`,
+        },
+      },
+      {
+        image: `quiz-Q8.jpg`,
+        question: `At the end, the chef asks about how you felt about the overall experience. How would you respond?`,
+        answers: {
+          LowRisk: `Tell him your favourite part of the experience`,
+          ModerateRisk: `Share what you enjoyed along but still give honest feedback on what could be improved`,
+          LeastRisk: `"Everything was good." - You keep things simple and polite`,
+        },
+      },
+      { 
+        image: `quiz-Q9.jpg`,
+        question: `The staff asks you to fill in a feedback form. What do you put as your gender? `,
+        answers: {
+          Male: `Male`,
+          Female: `Female`,
+          Shh: `Prefer not to say`,
+        },
+      },
+    ].map((v, i) => ({ ...v, id: i + 1 }));
+
+    //change this to point system
+    // this.RESULT = [
+    //   {
+    //     url: "result-capital-preservation.html",
+    //     format: "CAPITAL PRESERVATION",
+    //   },
+    //   {
+    //     url: "result-wealth-accumulation.html",
+    //     format: "WEALTH ACCUMULATION",
+    //   },
+    //   {
+    //     url: "result-income-generation.html",
+    //     format: "INCOME GENERATION",
+    //   },
+    //   {
+    //     url: "result-legacy-planning.html",
+    //     format: "LEGACY PLANNING",
+    //   },
+    // ].map((v, i) => ({
+    //   ...v,
+    //   id: i + 1,
+    //   formatCheck: v.format,
+    // }));
+
+    this.RESULT = [
+      { min: 8,  max: 11, url: "result-picky-eater.html" }, // MMF | Div EQ
+      { min: 12, max: 14, url: "result-classic-lover.html" }, // Gold | SLC
+      { min: 15, max: 17, url: "result-menu-planner.html" }, // SDBF | SG Trust
+      { min: 18, max: 19, url: "result-adventurous-foodie.html" }, // Div EQ | MMF
+      { min: 20, max: 21, url: "result-food-vlogger.html" }, // SLC | Gold
+      { min: 22, max: 24, url: "result-restaurant-critic.html" }, // SG Trust | SDBF
+    ]
+
+    this.currentQuizID = 1;
+    this.userAnswers = new Array();
+  }
+
+  run() {
+    if (this.QUIZ && this.QUIZ.length && this.RESULT && this.RESULT.length) {
+      // this.playMusic();
+      this.renderQuiz(this.currentQuizID);
+    }
+  }
+
+  renderQuiz(quizID) {
+
+    console.log(quizID + ", " + this.currentQuizID)
+    if (quizID && !isNaN(quizID)) {
+      const quizData = this.QUIZ.find((v) => v.id === quizID);
+      const isLastQuiz = quizID >= this.QUIZ.length;
+
+      if (quizData) {
+        document.title = `LionGlobal Signature Singapore Suite Quiz | Lion Global Investors`;
+
+        const quizRender = document.getElementById("quiz-render");
+
+        if (quizRender) {
+          quizRender.innerHTML = `
+                    <div class="uk-card quiz-card" data-id="${quizData.id}">
+                        <div class="ans-banner-container">
+                            <img class="quiz-cover-image" src="pic/${quizData.image}" alt="Quiz Cover Image">
+                        </div>
+                        <div class="quiz-info">
+                            
+                            <div class="quiz-options">
+                                ${Object.entries(quizData.answers).map(([key, value]) => `
+                                <div class="quiz-option">
+                                    <input id="quiz-${quizData.id}-${key}" type="radio" name="quiz-${quizData.id}" value="${key}">
+                                    <label for="quiz-${quizData.id}-${key}">
+                                        ${value}
+                                    </label>
+                                </div>`).join("")}
+                            </div>
+                        </div>
+                    </div>`;
+
+          const quizOptions = document.querySelectorAll(".quiz-option input");
+
+          if (quizOptions.length > 0) {
+            quizOptions.forEach((option) => {
+              option.addEventListener("change", () => {
+                quizOptions.forEach((el) => el.setAttribute("disabled", true));
+
+                const selectedInput = document.querySelector(".quiz-option input:checked");
+
+                if (selectedInput) {
+                  const answer = selectedInput.value;
+                  this.userAnswers.push({ quizID, answer });
+                  console.log("renderQuiz => userAnswers -", this.userAnswers);
+
+                  setTimeout(() => {
+                    if (isLastQuiz) {
+                      this.showResult();
+                    } else {
+                      this.renderQuiz(quizID + 1);
+                      this.currentQuizID = quizID + 1;
+                    }
+                  }, 500);
+                }
+              });
+            });
+          }
+        }
+      }
+    }
+  }
+
+  playMusic() {
+    if (!this.audio) {
+      this.audio = new Audio('audio/bgm.mp3');
+      this.audio.loop = true;
+      this.audio.volume = 0.1;
+      this.audio.play().catch(err => {
+        console.warn("Autoplay blocked, waiting for user interaction.");
+          const playOnUserInteraction = () => {
+          this.audio.play().catch(err => console.error("Audio play still blocked:", err));
+          document.removeEventListener("click", playOnUserInteraction);
+        };
+  
+        document.addEventListener("click", playOnUserInteraction);
+      });
+    }
+  }
+
+  showResult() {
+    console.log("showResult => userAnswers -", this.userAnswers);
+
+    const scoreMap = {
+      LeastRisk: 1,
+      LowRisk: 2,
+      ModerateRisk: 3,
+      Male: 6,
+      Female: 0,
+      Shh: 0
+    };
+
+    // calculate total score
+    const totalScore = this.userAnswers.reduce((sum, item) => {
+      return sum + scoreMap[item.answer];
+    }, 0);
+
+    console.log("Total Score:", totalScore);
+
+    // find matching result range
+    const result = this.RESULT.find(r =>
+      totalScore >= r.min && totalScore <= r.max
+    );
+
+    if (result) {
+      console.log("Redirecting to:", result.url);
+      location.href = result.url;
+    } else {
+      console.error("No matching result found for score:", totalScore);
+    }
+    
+  }
+
+
+  // showResult() {
+  //   console.log("showResult => userAnswers -", this.userAnswers);
+  
+  //   if (this.userAnswers && this.userAnswers.length) {
+  //     const counts = this.userAnswers.reduce((acc, { answer }) => {
+  //       acc[answer] = (acc[answer] || 0) + 1;
+  //       return acc;
+  //     }, {});
+  
+  //     const maxCount = Math.max(...Object.values(counts));
+  //     const dominantCategories = Object.keys(counts).filter(
+  //       (key) => counts[key] === maxCount
+  //     );
+  
+  //     console.log("Dominant Categories:", dominantCategories);
+  
+      // let dominantCategory;
+  
+      // if (dominantCategories.length > 1) {
+      //   console.log("Tie detected, initiating tiebreaker...");
+  
+      //   const quizRender = document.getElementById("quiz-render");
+  
+      //   if (quizRender) {
+      //     const tiebreakerQuiz = this.QUIZ.find(
+      //       (quiz) =>
+      //         quiz.question ===
+      //         "You are at the end of your trip, what souvenirs do you bring home? "
+      //     );
+  
+      //     if (tiebreakerQuiz) {
+      //       const filteredAnswers = Object.fromEntries(
+      //         Object.entries(tiebreakerQuiz.answers).filter(([key]) =>
+      //           dominantCategories.includes(key)
+      //         )
+      //       );
+      //       quizRender.innerHTML = `
+      //         <div class="uk-card quiz-card">
+      //         <div class="ans-banner-container">
+      //           <img class="quiz-cover-image" src="pic/${tiebreakerQuiz.image}" alt="Tiebreaker Question">
+      //         </div>
+      //         <div class="quiz-info">
+      //           <p class="quiz-desc">
+                
+      //           </p>
+      //           <div class="quiz-options">
+      //             ${Object.entries(filteredAnswers)
+      //               .map(
+      //                 ([key, value]) => `
+      //                   <div class="quiz-option">
+      //                     <input id="tiebreaker-${key}" type="radio" name="tiebreaker" value="${key}">
+      //                     <label for="tiebreaker-${key}">
+      //                       ${value}
+      //                     </label>
+      //                   </div>`
+      //               )
+      //               .join("")}
+      //           </div>
+      //         </div>
+      //       </div>`;
+      //       const tiebreakerOptions = document.querySelectorAll(".quiz-option input");
+  
+      //       if (tiebreakerOptions.length > 0) {
+      //         tiebreakerOptions.forEach((option) => {
+      //           option.addEventListener("change", () => {
+      //             tiebreakerOptions.forEach((el) => el.setAttribute("disabled", true));
+  
+      //             const selectedInput = document.querySelector(".quiz-option input:checked");
+  
+      //             if (selectedInput) {
+      //               dominantCategory = selectedInput.value;
+      //               console.log("Tiebreaker Winner:", dominantCategory);
+  
+      //               this.processResult(dominantCategory);
+      //             }
+      //           });
+      //         });
+      //       }
+      //     } else {
+      //       console.error("Tiebreaker question not found in QUIZ data.");
+      //     }
+      //   }
+      // } else {
+      //   dominantCategory = dominantCategories[0];
+      //   console.log("Dominant Category:", dominantCategory);
+  
+      //   const resultData = this.RESULT.find(
+      //     (r) => r.format.toLowerCase().includes(dominantCategory.toLowerCase())
+      //   );
+  
+      //   console.log("Result Data:", resultData);
+  
+      //   if (resultData) {
+      //     location.href = resultData.url;
+      //   } else {
+      //     console.error("No matching result found.");
+      //   }
+      // }
+  //   }
+  // }  
+  
+  // processResult(dominantCategory) {
+  //   if (!dominantCategory) {
+  //     console.error("No dominant category provided to processResult.");
+  //     return;
+  //   }
+
+  //   const resultData = this.RESULT.find(
+  //     (r) => r.format.toLowerCase().includes(dominantCategory.toLowerCase())
+  //   );
+
+  //   if (resultData) {
+  //     console.log("Processing Result:", resultData);
+  //     location.href = resultData.url;
+  //   } else {
+  //     console.error("No matching result found for the category:", dominantCategory);
+  //   }
+  // }
+
+}
+
+function prefetchImages(folderPath, fileNames) {
+  const baseURL = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '');
+
+  fileNames.forEach(fileName => {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = `${baseURL}${folderPath}${fileName}`;
+      document.head.appendChild(link);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const imageFiles = [
+    "quiz-Q1.jpg",
+    "quiz-Q2.jpg",
+    "quiz-Q3.jpg",
+    "quiz-Q4.jpg",
+    "quiz-Q5.jpg",
+    "quiz-Q6.jpg",
+    "quiz-Q7.jpg",
+    "quiz-Q8.jpg",
+    "start.jpg",
+    "results-anim.gif",
+    
+  ];
+  prefetchImages('/pic/', imageFiles);
+  const quiz = new Quiz();
+  quiz.run();
+});
