@@ -1223,7 +1223,7 @@ a.fundCentre-button:visited {
 
     .image-btn {
         height: 60vh;
-        right: 2%;
+        right: 5%;
         bottom: 2%;
         gap: 8px;
         transform: scale(0.88);
@@ -1252,15 +1252,20 @@ a.fundCentre-button:visited {
         margin-top: clamp(60px, 9vh, 120px);
     }
 
-    /* TWO BUTTON layout */
+    /* TWO-BUTTONS ONLY (phone fix) */
     .image-btn.two-buttons {
-        gap: 6px;
-        transform: translateY(-2vh);
+        transform: translateY(clamp(6px, 2vh, 18px));
+        gap: clamp(6px, 2vh, 12px);
     }
 
     .image-btn.two-buttons a:first-child {
-        transform: translateY(clamp(-20px, -4vh, -10px));
+        transform: translateY(clamp(0px, 0.5vh, 6px));
     }
+
+    .image-btn.two-buttons a:last-child {
+        transform: translateY(clamp(18px, 5vh, 60px));
+    }
+
 }
 
 @media screen and (max-width: 414px){
