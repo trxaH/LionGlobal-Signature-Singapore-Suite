@@ -681,7 +681,7 @@ footer a {
     align-items: center;
 
     width: auto;
-    min-width: 180px;
+    /* min-width: 180px; */
     max-width: 320px;
 
     padding: 1vh 1.5vw;
@@ -921,6 +921,42 @@ a.fundCentre-button:visited {
     .result-text {
         font-size: 14px;
     }
+
+     .image-btn {
+        right: 12%;
+        bottom: 4%;
+        gap: 10px;
+    }
+
+    .image-btn button {
+        font-size: 15px;
+        padding: 10px 18px;
+        line-height: 1.15;
+        width: 220px;
+    }
+
+    /* one-two */
+    .image-btn.one-two > a:first-child {
+        margin-bottom: 220px;
+    }
+
+    .image-btn.one-two .group {
+        gap: 8px;
+    }
+
+    /* two-one */
+    .image-btn.two-one > a:first-child {
+        margin-bottom: 130px;
+    }
+
+    .image-btn.two-one .group > a:last-child {
+        margin-bottom: 220px;
+    }
+
+    /* two-buttons */
+    .image-btn.two-buttons a:first-child {
+        margin-bottom: 380px;
+    }
 }
 
 @media screen and (max-width: 1500px) {
@@ -929,6 +965,50 @@ a.fundCentre-button:visited {
     .scrollDown {
         width: 160px;
         /* left: 1.2vw; */
+    }
+
+    .image-btn {
+        right: 12%;
+        bottom: 3%;
+        gap: 8px;
+    }
+
+    .image-btn button {
+        font-size: 13px;
+        padding: 8px 14px;
+        line-height: 1.1;
+        width: 180px;
+    }
+
+    /* one-two */
+    .image-btn.one-two > a:first-child {
+        margin-bottom: 350px;
+    }
+
+    .image-btn.one-two .group {
+        gap: 6px;
+    }
+
+    /* two-one */
+    .image-btn.two-one {
+        transform: translateY(-8px);
+    }
+
+    .image-btn.two-one > a:first-child {
+        margin-bottom: 100px;
+    }
+
+    .image-btn.two-one > a:last-child {
+        margin-top: 0px;
+    }
+
+    .image-btn.two-one .group > a:last-child {
+        margin-bottom: 380px;
+    }
+
+    /* two-buttons */
+    .image-btn.two-buttons a:first-child {
+        margin-bottom: 300px;
     }
 }
 
@@ -955,56 +1035,101 @@ a.fundCentre-button:visited {
     /* } */
 /* } */ 
 
-@media screen and (max-width:1024px){
+/* =========================================
+   TABLET / 1024px
+========================================= */
+@media screen and (max-width: 1024px) {
 
-    .image-btn{
-        right: 6%;
-        bottom: 5%;
-        gap: 8px;
+    .start-button {
+        height: 55px;
+        width: 150px;
     }
 
-    .fundCentre-button{
-        width: 165px;
-        height: 32px;
-        font-size: 11px;
+    .link-to-lets-fly {
+        left: 72%;
     }
 
-     /* =========================
-       BASE
-    ========================= */
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
+        width: 260px;
+    }
+
+    .share-menu ul {
+        left: -8vw;
+        width: 260px;
+    }
+
+    /* overall container */
     .image-btn {
-        right: 8%;
-        bottom: 3%;
-        gap: 8px;
+        right: 10%;
+        bottom: 2%;
+        gap: 10px;
+        transform: translateY(0);
+    }
+
+    /* button sizing */
+    .image-btn button {
+        font-size: 12px;
+        padding: 8px 8px;
+        line-height: 1.1;
+        width: 140px;
     }
 
     /* =========================
        ONE - TWO
     ========================= */
-    .image-btn.one-two a:nth-child(1) {
-        margin-bottom: 40px;
+    .image-btn.one-two > a:first-child {
+        margin-bottom: 220px;
     }
 
     .image-btn.one-two .group {
+        display: flex;
+        flex-direction: column;
         gap: 8px;
+        transform: translateY(0);
+    }
+
+    .image-btn.one-two .group > a:last-child {
+        margin-bottom: 10px;
     }
 
     /* =========================
        TWO - ONE
     ========================= */
-    .image-btn.two-one .group {
-        gap: 8px;
+    .image-btn.two-one {
+        transform: translateY(-8px);
     }
 
-    .image-btn.two-one > a:last-child {
-        margin-top: 70px;
+    .image-btn.two-one > a:first-child {
+        margin-bottom: 100px;
+    }
+
+    .image-btn.two-one .group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        transform: translateY(0);
+    }
+
+    .image-btn.two-one .group > a:last-child {
+        margin-bottom: 160px;
     }
 
     /* =========================
        TWO BUTTONS
     ========================= */
     .image-btn.two-buttons {
-        gap: 18px;
+        gap: 20px;
+        transform: none;
+    }
+
+    .image-btn.two-buttons a:first-child {
+        margin-bottom: 260px;
+    }
+
+    .image-btn.two-buttons a:last-child {
+        margin-top: 12px;
     }
 }
 
@@ -1201,9 +1326,10 @@ a.fundCentre-button:visited {
 
     /* button font sizing */
     .image-btn button {
-        font-size: 14px;
-        padding: 10px 14px;
+        font-size: 16px;
+        padding: 18px 25px;
         line-height: 1.2;
+        width: 210px;
     }
 
     /* =========================
@@ -1247,6 +1373,10 @@ a.fundCentre-button:visited {
         margin-bottom: 0px !important;
     }
 
+    .image-btn.two-one > a:last-child {
+        margin-bottom: 0px;
+    }
+
     .image-btn.two-one .group > a:last-child {
         margin-bottom: 320px;
     }
@@ -1255,7 +1385,7 @@ a.fundCentre-button:visited {
         display: flex;
         flex-direction: column;
         gap: 6px;
-        transform: translateY(6px); /* pushes Button 2+3 slightly down */
+        transform: translateY(0px); /* pushes Button 2+3 slightly down */
     }
 
     /* =========================
@@ -1273,6 +1403,62 @@ a.fundCentre-button:visited {
 
     .image-btn.two-buttons a:last-child {
         margin-top: 8px;
+    }
+}
+
+/* =========================================
+   ANDROID only (Chrome/WebView)
+========================================= */
+@media screen and (max-width: 600px) {
+    @supports not (padding: env(safe-area-inset-bottom)) {
+
+        .image-btn {
+            bottom: 3%;
+        }
+
+        .image-btn.two-one {
+            transform: translateY(-20px);
+        }
+    }
+}
+
+/* =========================================
+   APPLE iPhones (Safari safe-area fix)
+========================================= */
+@supports (padding: env(safe-area-inset-bottom)) {
+    @media screen and (max-width: 600px) {
+
+        .image-btn {
+            bottom: max(3%, env(safe-area-inset-bottom));
+            right: 15%;
+        }
+
+        /* ---------- ONE-TWO ---------- */
+        .image-btn.one-two > a:first-child {
+            margin-bottom: 520px;   /* was 300 */
+        }
+
+        .image-btn.one-two .group {
+            transform: translateY(0px); /* was 6 */
+        }
+
+        /* ---------- TWO-ONE ---------- */
+        .image-btn.two-one {
+            transform: translateY(-20px); /* was -20 */
+        }
+
+        .image-btn.two-one > a:first-child {
+            margin-bottom: 130px; /* was 150 */
+        }
+
+        .image-btn.two-one .group > a:last-child {
+            margin-bottom: 520px; /* was 320 */
+        }
+
+        /* ---------- TWO-BUTTONS ---------- */
+        .image-btn.two-buttons a:first-child {
+            margin-bottom: 520px; /* was 600 */
+        }
     }
 }
 
@@ -1339,7 +1525,7 @@ a.fundCentre-button:visited {
        BASE
     ========================= */
     .image-btn {
-        right: 2%;
+        right: 14%;
         bottom: 2%;
         gap: 6px;
     }
@@ -1364,8 +1550,8 @@ a.fundCentre-button:visited {
         gap: 6px;
     }
 
-    .image-btn.two-one > a:last-child {
-        margin-top: 50px;
+    .image-btn.two-one .group > a:last-child {
+        margin-bottom: 350px;
     }
 
     /* =========================
@@ -1493,6 +1679,32 @@ a.fundCentre-button:visited {
     .image-btn.two-buttons a:last-child {
         margin-top: 8px;
     }
+    
+}
+
+/* iPhone 12 Pro Max / similar iPhones */
+@media only screen
+and (max-width: 428px)
+and (-webkit-min-device-pixel-ratio: 3) {
+
+    .image-btn {
+        bottom: env(safe-area-inset-bottom, 2%);
+    }
+
+    /* one-two */
+    .image-btn.one-two {
+        transform: translateY(-12px);
+    }
+
+    /* two-one */
+    .image-btn.two-one {
+        transform: translateY(-12px);
+    }
+
+    /* two-buttons */
+    .image-btn.two-buttons {
+        transform: translateY(4px);
+    }
 }
 
 @media screen and (max-width: 390px){
@@ -1528,7 +1740,7 @@ a.fundCentre-button:visited {
     ========================= */
 
     .image-btn.one-two > a:first-child {
-        margin-bottom: 350px;    /* strong group separation */
+        margin-bottom: 320px;    /* strong group separation */
     }
 
     .image-btn.one-two .group > a:first-child {
@@ -1564,7 +1776,7 @@ a.fundCentre-button:visited {
     }
 
     .image-btn.two-one .group > a:last-child {
-        margin-bottom: 320px;
+        margin-bottom: 330px;
     }
 
     .image-btn.two-one .group {
