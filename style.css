@@ -1188,6 +1188,92 @@ a.fundCentre-button:visited {
         left: -11vw;
         width: 240px;
     }
+
+    /* overall container adjustment */
+    .image-btn {
+        right: 15%;
+        bottom: 3%;
+        gap: 8px;
+        transform: translateY(6px);
+        /* transform: scale(0.92); */
+        /* transform-origin: bottom right; */
+    }
+
+    /* button font sizing */
+    .image-btn button {
+        font-size: 14px;
+        padding: 10px 14px;
+        line-height: 1.2;
+    }
+
+    /* =========================
+       ONE - TWO
+       (Button 1 | Button 2 + 3)
+    ========================= */
+
+    .image-btn.one-two > a:first-child {
+        margin-bottom: 350px;    /* strong group separation */
+    }
+
+    .image-btn.one-two .group > a:first-child {
+        margin-bottom: 0px !important;
+    }
+
+    .image-btn.one-two .group > a:last-child {
+        margin-bottom: 20px;
+    }
+
+    .image-btn.one-two .group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        transform: translateY(6px); /* pushes Button 2+3 slightly down */
+    }
+
+    /* =========================
+       TWO - ONE
+       (Button 1 + 2 | Button 3)
+    ========================= */
+
+    .image-btn.two-one {
+        transform: translateY(-20px);
+    }
+
+    .image-btn.two-one > a:first-child {
+        margin-bottom: 150px;    /* strong group separation */
+    }
+
+    .image-btn.two-one .group > a:first-child {
+        margin-bottom: 0px !important;
+    }
+
+    .image-btn.two-one .group > a:last-child {
+        margin-bottom: 320px;
+    }
+
+    .image-btn.two-one .group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        transform: translateY(6px); /* pushes Button 2+3 slightly down */
+    }
+
+    /* =========================
+       TWO BUTTONS
+    ========================= */
+    .image-btn.two-buttons {
+        gap: clamp(12px, 2.5vh, 18px);
+        transform: none; /* IMPORTANT: remove mismatch source */
+    }
+
+    /* fix positioning using consistent spacing instead */
+    .image-btn.two-buttons a:first-child {
+        margin-bottom: 600px;
+    }
+
+    .image-btn.two-buttons a:last-child {
+        margin-top: 8px;
+    }
 }
 
 @media screen and (max-width: 540px) { 
@@ -1401,7 +1487,7 @@ a.fundCentre-button:visited {
 
     /* fix positioning using consistent spacing instead */
     .image-btn.two-buttons a:first-child {
-        margin-bottom: 380px;
+        margin-bottom: 340px;
     }
 
     .image-btn.two-buttons a:last-child {
@@ -1417,6 +1503,92 @@ a.fundCentre-button:visited {
 
     .link-to-lets-fly {
         left: 73%;
+    }
+
+    /* overall container adjustment */
+    .image-btn {
+        right: 15%;
+        bottom: 3%;
+        gap: 8px;
+        transform: translateY(6px);
+        /* transform: scale(0.92); */
+        /* transform-origin: bottom right; */
+    }
+
+    /* button font sizing */
+    .image-btn button {
+        font-size: 14px;
+        padding: 10px 14px;
+        line-height: 1.2;
+    }
+
+    /* =========================
+       ONE - TWO
+       (Button 1 | Button 2 + 3)
+    ========================= */
+
+    .image-btn.one-two > a:first-child {
+        margin-bottom: 350px;    /* strong group separation */
+    }
+
+    .image-btn.one-two .group > a:first-child {
+        margin-bottom: 0px !important;
+    }
+
+    .image-btn.one-two .group > a:last-child {
+        margin-bottom: 20px;
+    }
+
+    .image-btn.one-two .group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        transform: translateY(6px); /* pushes Button 2+3 slightly down */
+    }
+
+    /* =========================
+       TWO - ONE
+       (Button 1 + 2 | Button 3)
+    ========================= */
+
+    .image-btn.two-one {
+        transform: translateY(-20px);
+    }
+
+    .image-btn.two-one > a:first-child {
+        margin-bottom: 150px;    /* strong group separation */
+    }
+
+    .image-btn.two-one .group > a:first-child {
+        margin-bottom: 0px !important;
+    }
+
+    .image-btn.two-one .group > a:last-child {
+        margin-bottom: 320px;
+    }
+
+    .image-btn.two-one .group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        transform: translateY(6px); /* pushes Button 2+3 slightly down */
+    }
+
+    /* =========================
+       TWO BUTTONS
+    ========================= */
+    .image-btn.two-buttons {
+        gap: clamp(12px, 2.5vh, 18px);
+        transform: none; /* IMPORTANT: remove mismatch source */
+    }
+
+    /* fix positioning using consistent spacing instead */
+    .image-btn.two-buttons a:first-child {
+        margin-bottom: 380px;
+    }
+
+    .image-btn.two-buttons a:last-child {
+        margin-top: 8px;
     }
 }
 
