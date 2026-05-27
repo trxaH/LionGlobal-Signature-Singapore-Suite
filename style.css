@@ -1694,12 +1694,20 @@ and (-webkit-min-device-pixel-ratio: 3) {
 
     /* one-two */
     .image-btn.one-two {
-        transform: translateY(-12px);
+        transform: translateY(-15px);
+    }
+
+    .image-btn.one-two > a:first-child {
+        margin-bottom: 500px;    /* strong group separation */
     }
 
     /* two-one */
     .image-btn.two-one {
-        transform: translateY(-12px);
+        transform: translateY(-20px);
+    }
+
+    .image-btn.two-one .group > a:last-child {
+        margin-bottom: 380px;
     }
 
     /* two-buttons */
@@ -1708,12 +1716,12 @@ and (-webkit-min-device-pixel-ratio: 3) {
     }
 
     .image-btn.two-buttons a:first-child {
-        margin-bottom: 310px;
+        margin-bottom: 330px;
     }
 
     /* shift Button 2 UP only */
     .image-btn.two-buttons a:last-child {
-        transform: translateY(-10px);
+        transform: translateY(-30px);
     }
 }
 
