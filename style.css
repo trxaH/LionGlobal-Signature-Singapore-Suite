@@ -1707,7 +1707,7 @@ and (-webkit-min-device-pixel-ratio: 3) {
     }
 
     .image-btn.two-one .group > a:last-child {
-        margin-bottom: 380px;
+        margin-bottom: 400px;
     }
 
     /* two-buttons */
@@ -1716,12 +1716,12 @@ and (-webkit-min-device-pixel-ratio: 3) {
     }
 
     .image-btn.two-buttons a:first-child {
-        margin-bottom: 330px;
+        margin-bottom: 500px;
     }
 
     /* shift Button 2 UP only */
     .image-btn.two-buttons a:last-child {
-        transform: translateY(-30px);
+        transform: translateY(-60px);
     }
 }
 
