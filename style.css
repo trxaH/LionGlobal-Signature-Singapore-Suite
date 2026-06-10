@@ -624,13 +624,15 @@ footer a {
 .image-btn {
     position: absolute;
     right: 15%;
-    bottom: 3.3%;
+    bottom: calc(3% + env(safe-area-inset-bottom));
 
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 
     gap: 10px;
+
+    transform: none;
 }
 
 /* =========================
@@ -639,6 +641,7 @@ footer a {
 .image-btn .group {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     gap: 6px;
 }
 
@@ -1735,7 +1738,7 @@ a.fundCentre-button:visited {
 
     /* fix positioning using consistent spacing instead */
     .image-btn.two-buttons a:first-child {
-        margin-bottom: 340px;
+        margin-bottom: 360px;
     }
 
     .image-btn.two-buttons a:last-child {
