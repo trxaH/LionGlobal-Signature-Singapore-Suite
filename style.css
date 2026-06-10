@@ -12,6 +12,12 @@
     margin-top: 10px;
 }
 
+/* Prevent the flex child from shrinking on iOS */
+.center-wrapper > div, .uk-card {
+    flex-shrink: 0 !important;
+    -webkit-flex-shrink: 0 !important;
+}
+
 /* hold image and text */
 .uk-card {
     display: inline-block;
