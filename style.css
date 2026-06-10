@@ -618,7 +618,7 @@ footer a {
 .image-btn {
     position: absolute;
     right: 15%;
-    bottom: 3%;
+    bottom: 3.3%;
 
     display: flex;
     flex-direction: column;
@@ -641,7 +641,7 @@ footer a {
    (1 | group 2+3)
 ========================= */
 .image-btn.one-two > a {
-    margin-bottom: 500px;
+    margin-bottom: 470px;
 }
 
 /* =========================
@@ -649,7 +649,7 @@ footer a {
    (group 1+2 | 3)
 ========================= */
 .image-btn.two-one > a:last-child {
-    margin-top: 500px;
+    margin-top: 150px;
 }
 
 /* =========================
@@ -664,7 +664,7 @@ footer a {
 }
 
 .image-btn.two-buttons a:first-child {
-    margin-bottom: 500px;
+    margin-bottom: 460px;
 }
 
 .image-btn a{
@@ -693,8 +693,9 @@ footer a {
     color: white !important;
 
     font-family: Arial, sans-serif;
-    font-size: clamp(11px, 0.9vw, 15px);
+    /* font-size: clamp(12px, 0.9vw, 17px); */
     font-weight: 500;
+    font-size: 15px;
 
     text-decoration: none !important;
     -webkit-text-decoration: none !important;
@@ -723,6 +724,17 @@ a.fundCentre-button:visited {
 
 .second-button {
     background: #89264f;
+}
+
+.viewOthers {
+    position: absolute;
+    bottom: 0.5%;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: auto;
+
 }
 
 
@@ -908,6 +920,8 @@ a.fundCentre-button:visited {
         bottom: 3.7vw;
         right: 5.6vw;
     }
+
+    
 }
 
 @media screen and (max-width: 1600px) {
@@ -928,16 +942,20 @@ a.fundCentre-button:visited {
         gap: 10px;
     }
 
-    .image-btn button {
+    .image-btn .fundCentre-button {
         font-size: 15px;
         padding: 10px 18px;
         line-height: 1.15;
         width: 220px;
     }
 
+    .viewOthers {
+        font-size: 15px;
+    }
+
     /* one-two */
     .image-btn.one-two > a:first-child {
-        margin-bottom: 220px;
+        margin-bottom: 340px;
     }
 
     .image-btn.one-two .group {
@@ -955,7 +973,7 @@ a.fundCentre-button:visited {
 
     /* two-buttons */
     .image-btn.two-buttons a:first-child {
-        margin-bottom: 380px;
+        margin-bottom: 350px;
     }
 }
 
@@ -973,7 +991,7 @@ a.fundCentre-button:visited {
         gap: 8px;
     }
 
-    .image-btn button {
+    .image-btn .fundCentre-button {
         font-size: 13px;
         padding: 8px 14px;
         line-height: 1.1;
@@ -1063,15 +1081,15 @@ a.fundCentre-button:visited {
     /* overall container */
     .image-btn {
         right: 10%;
-        bottom: 2%;
+        bottom: 2.5%;
         gap: 10px;
         transform: translateY(0);
     }
 
     /* button sizing */
-    .image-btn button {
+    .image-btn .fundCentre-button {
         font-size: 12px;
-        padding: 8px 8px;
+        padding: 6px 6px;
         line-height: 1.1;
         width: 140px;
     }
@@ -1098,7 +1116,7 @@ a.fundCentre-button:visited {
        TWO - ONE
     ========================= */
     .image-btn.two-one {
-        transform: translateY(-8px);
+        transform: translateY(-20px);
     }
 
     .image-btn.two-one > a:first-child {
@@ -1108,12 +1126,12 @@ a.fundCentre-button:visited {
     .image-btn.two-one .group {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        /* gap: 8px; */
         transform: translateY(0);
     }
 
     .image-btn.two-one .group > a:last-child {
-        margin-bottom: 160px;
+        margin-bottom: 220px;
     }
 
     /* =========================
@@ -1130,6 +1148,15 @@ a.fundCentre-button:visited {
 
     .image-btn.two-buttons a:last-child {
         margin-top: 12px;
+    }
+
+    .viewOthers {
+        font-size: 12px;
+        left: 50%;
+    }
+
+    .fundCentre-button {
+        font-size: 12px;
     }
 }
 
@@ -1204,11 +1231,6 @@ a.fundCentre-button:visited {
         margin-left: 15px;
     }
 
-    .transition2{
-        top: 72%;
-        left: 80%;
-    }
-
     .learnMore-button,
     .replay-button,
     .scrollDown {
@@ -1229,6 +1251,47 @@ a.fundCentre-button:visited {
     label {
         width: 95%;
     }
+
+    .image-btn{
+        right: 5%;
+        bottom: 4%;
+    }
+
+    .image-btn .fundCentre-button{
+        width: auto;
+        height: 28px;
+        font-size: 25px;
+        padding: 25px;
+    }
+
+    .image-btn {
+        right: 15%;
+        bottom: 3%;
+        gap: 10px;
+        transform: scale(0.95);
+        transform-origin: bottom right;
+    }
+
+    .image-btn.one-two > a:first-child {
+        margin-bottom: 620px;
+    }
+
+    .image-btn.two-one .group > a:last-child {
+        margin-bottom: 610px;
+    }
+
+    .viewOthers {
+        font-size: 15px;
+    }
+
+    .fundCentre-button {
+        font-size: 20px;
+    }
+
+    .image-btn.two-buttons a:first-child {
+        margin-bottom: 630px;
+    }
+
 }
 
 @media screen and (max-width: 820px) { 
@@ -1267,18 +1330,35 @@ a.fundCentre-button:visited {
         bottom: 4%;
     }
 
-    .fundCentre-button{
-        width: 145px;
+    .image-btn .fundCentre-button{
+        width: auto;
         height: 28px;
-        font-size: 10px;
+        font-size: 25px;
+        padding: 25px;
     }
 
     .image-btn {
-        right: 8%;
+        right: 15%;
         bottom: 3%;
         gap: 10px;
         transform: scale(0.95);
         transform-origin: bottom right;
+    }
+
+    .image-btn.one-two > a:first-child {
+        margin-bottom: 620px;
+    }
+
+    .image-btn.two-one .group > a:last-child {
+        margin-bottom: 610px;
+    }
+
+    .viewOthers {
+        font-size: 15px;
+    }
+
+    .fundCentre-button {
+        font-size: 20px;
     }
 
 }
@@ -1325,7 +1405,7 @@ a.fundCentre-button:visited {
     }
 
     /* button font sizing */
-    .image-btn button {
+    .image-btn .fundCentre-button {
         font-size: 16px;
         padding: 18px 25px;
         line-height: 1.2;
@@ -1435,7 +1515,7 @@ a.fundCentre-button:visited {
 
         /* ---------- ONE-TWO ---------- */
         .image-btn.one-two > a:first-child {
-            margin-bottom: 520px;   /* was 300 */
+            margin-bottom: 460px;   /* was 300 */
         }
 
         .image-btn.one-two .group {
@@ -1452,13 +1532,14 @@ a.fundCentre-button:visited {
         }
 
         .image-btn.two-one .group > a:last-child {
-            margin-bottom: 520px; /* was 320 */
+            margin-bottom: 400px; /* was 320 */
         }
 
         /* ---------- TWO-BUTTONS ---------- */
         .image-btn.two-buttons a:first-child {
-            margin-bottom: 520px; /* was 600 */
+            margin-bottom: 420px; /* was 600 */
         }
+
     }
 }
 
@@ -1509,64 +1590,38 @@ a.fundCentre-button:visited {
     }
 
     .image-btn {
-        right: 5%;
-        bottom: 2%;
+        /* right: 5%; */
+        bottom: 3%;
         gap: 8px;
         transform: scale(0.9);
         transform-origin: bottom right;
     }
-}
 
-
-/* iphones */
-@media (max-width: 430px) {
-
-    /* =========================
-       BASE
-    ========================= */
-    .image-btn {
-        right: 14%;
-        bottom: 2%;
-        gap: 6px;
-    }
-
-    /* =========================
-       ONE - TWO
-       (1 | 2+3)
-    ========================= */
-    .image-btn.one-two a:nth-child(1) {
-        margin-bottom: 30px;
-    }
-
-    .image-btn.one-two .group {
-        gap: 6px;
-    }
-
-    /* =========================
-       TWO - ONE
-       (1+2 | 3)
-    ========================= */
-    .image-btn.two-one .group {
-        gap: 6px;
-    }
-
-    .image-btn.two-one .group > a:last-child {
-        margin-bottom: 350px;
-    }
-
-    /* =========================
-       TWO BUTTONS
-    ========================= */
-    .image-btn.two-buttons {
-        gap: 14px;
-        transform: translateY(4px);
-    }
-
-    .image-btn.two-buttons a:last-child {
-        transform: translateY(2px);
+    .viewOthers {
+        font-size: 15px;
     }
 
 }
+
+@media screen and (max-width: 430px){
+    .image-btn.two-buttons a:first-child {
+        font-size: 12px;
+    }
+
+    .viewOthers {
+        font-size: 12px;
+        left: 50%;
+    }
+
+    .fundCentre-button {
+        font-size: 14px;
+        width: auto;
+        height: 28px;
+        padding: 15px 20px;
+    }
+
+}
+
 
 @media screen and (max-width: 414px){
     .start-button {
@@ -1605,7 +1660,7 @@ a.fundCentre-button:visited {
     }
 
     /* button font sizing */
-    .image-btn button {
+    .image-btn .fundCentre-button {
         font-size: 14px;
         padding: 10px 14px;
         line-height: 1.2;
@@ -1684,8 +1739,7 @@ a.fundCentre-button:visited {
 }
 
 /* iPhone 12 Pro Max / similar iPhones */
-@media only screen
-and (max-width: 428px)
+@media only screen and (max-width: 430px)
 and (-webkit-min-device-pixel-ratio: 3) {
 
     .image-btn {
@@ -1746,7 +1800,7 @@ and (-webkit-min-device-pixel-ratio: 3) {
     }
 
     /* button font sizing */
-    .image-btn button {
+    .image-btn .fundCentre-button {
         font-size: 14px;
         padding: 10px 14px;
         line-height: 1.2;
@@ -1815,11 +1869,11 @@ and (-webkit-min-device-pixel-ratio: 3) {
 
     /* fix positioning using consistent spacing instead */
     .image-btn.two-buttons a:first-child {
-        margin-bottom: 380px;
+        margin-bottom: 360px;
     }
 
     .image-btn.two-buttons a:last-child {
-        margin-top: 8px;
+        margin-top: 5px;
     }
 }
 
